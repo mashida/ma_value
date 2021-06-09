@@ -63,7 +63,8 @@ int OnCalculate(const int rates_total,
   {
 //---
    ma.Refresh();
-   Comment(ma.Main(0));
+   string message =  StringFormat("ma[0] = %s\nmode: %s | price: %s", DoubleToString(ma.Main(0), _Digits), EnumToString(ma1_method), EnumToString(ma1_price));
+   Comment(message);
 //--- return value of prev_calculated for next call
    return(rates_total);
   }
